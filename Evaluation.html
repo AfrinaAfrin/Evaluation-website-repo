@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px 20px;
+            height: 85px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar-left .brand {
+            font-size: 45px;
+            font-weight: bold;
+            color: red;
+        }
+
+        .navbar-center a {
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+        }
+
+        .navbar-right .icon {
+            font-size: 20px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        /* Main Image Styling */
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* Second Page Styles */
+.second-page {
+  display: flex;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.sidebar {
+  width: 20%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkbox-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.checkbox-list li {
+  margin-bottom: 10px;
+}
+
+.checkbox-list label {
+  margin-left: 5px;
+}
+
+.more-items {
+  color: blue;
+  cursor: pointer;
+}
+
+.main-content {
+  flex: 1;
+  padding: 100px;
+}
+
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  font-size: small;
+}
+
+.sorting-bar select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  size: 100cap;
+}
+
+.product-card {
+  background-color: #ffffff;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.product-card .price {
+  color: #070607;
+  font-weight: bold;
+}
+.blog-section {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      justify-content: left;
+    }
+    .parent-block {
+      display: flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-bottom: 50px;
+
+      
+    }
+    .child-block {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 30%; /* Adjusted for 4 blocks in a row */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .child-block img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .child-content {
+      padding: 15px;
+    }
+    .child-content h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+    .child-content p {
+      font-size: 14px;
+      color: #555;
+    }
+    @media (max-width: 768px) {
+      .child-block {
+        width: calc(50% - 10px); /* Two blocks per row on smaller screens */
+      }
+    }
+    @media (max-width: 480px) {
+      .child-block {
+        width: 100%; /* One block per row on very small screens */
+      }
+    }
+    .contact-section {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .form-container {
+      width: 60%;
+    }
+    .form-header {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      margin-left: 20px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-left: 20px;
+    }
+    .form-group textarea {
+      height: 100px;
+      resize: none;
+    }
+    .required-fields {
+      font-size: 12px;
+      color: red;
+      margin-bottom: 20px;
+    }
+    .submit-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 0px;
+      cursor: pointer;
+      margin-left: 600px;
+    }
+    .submit-btn:hover {
+      background-color: darkred;
+    }
+    .contact-info {
+      width: 35%;
+    }
+    .contact-info p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+    }
+    .footer img {
+      height: 40px;
+    }
+    .footer .copyright {
+      font-size: 14px;
+      color: #555;
+    }
+    .footer .social-icons img {
+      height: 20px;
+      margin-left: 10px;
+    }
+
+ 
+     
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <span class="brand">Grid.</span>
+        </div>
+        <div class="navbar-center">
+            <a href="#">SUMMER’24</a>
+            <a href="#">TOPWEAR</a>
+            <a href="#">BOTTOMWEAR</a>
+            <a href="#">SHOES & ACCESSORIES</a>
+            <a href="#">RESTOCKED</a>
+            <a href="#">THEMES</a>
+        </div>
+        <div class="navbar-right">
+            <i class="icon search">🔍</i>
+            <i class="icon profile">👤</i>
+            <i class="icon heart">❤️</i>
+            <i class="icon cart">🛒</i>
+        </div>
+    </nav>
+
+    <!-- Main Image Section -->
+    <div class="main-image">
+        <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage_Banner__1_ycCzHWB.jpg?format=webp&w=1500&dpr=1.3" alt="Main Image">
+    </div>
+    <!-- Second Page -->
+<div class="second-page">
+    <div class="sidebar">
+      <h2>PRODUCTS</h2>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for Products">
+      </div>
+      <ul class="checkbox-list">
+        <li><input type="checkbox" id="item1"><label for="item1">Women Boyfriend Shirts</label></li>
+        <li><input type="checkbox" id="item2"><label for="item2">Women Bralette</label></li>
+        <li><input type="checkbox" id="item3"><label for="item3">Women Cargo Jeans</label></li>
+        <li><input type="checkbox" id="item4"><label for="item4">Women Cargo Joggers</label></li>
+        <li><input type="checkbox" id="item5"><label for="item5">Women Cropped Tops</label></li>
+        <li><input type="checkbox" id="item6"><label for="item6">Women Denim Jackets</label></li>
+        <li><input type="checkbox" id="item7"><label for="item7">Women Jeans</label></li>
+        <li><input type="checkbox" id="item8"><label for="item8">Women Joggers</label></li>
+        <li><input type="checkbox" id="item9"><label for="item9">Women Oversized Cropped T-Shirts</label></li>
+        <li><input type="checkbox" id="item10"><label for="item10">Women Oversized Shirt Dresses</label></li>
+      </ul>
+      <p class="more-items">+6 more</p>
+    </div>
+  
+    <div class="main-content">
+      <div class="header1">
+          
+        <h1>Restocked Womenswear - 43 items</h1>
+        <div class="sorting-bar">
+          <select>
+            <option>Select Sorting Options</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest First</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1731908990_9435712.jpg?format=webp&w=300&dpr=1.3" alt="Product 1">
+          <h3>White Bralette Top</h3>
+          <p>Women Bralette</p>
+          <p class="price">₹699 MRP incl. of all taxes</p>
+        </div>
+        <div class="product-card">
+          <img src="https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1714974595_6555114.jpg?format=webp&w=300&dpr=1.3" alt="Product 2">
+          <h3>Cotton Linen: Lavender</h3>
+          <p>Women Boyfriend Shirts</p>
+          <p class="price">₹1399 MRP incl. of all taxes</p>
+        </div>
+        <div class="product-card">
+          <img src="https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1727679765_1844191.jpg?format=webp&w=300&dpr=1.3" alt="Product 3">
+          <h3>Korean Pants: Camel</h3>
+          <p>Women Pants</p>
+          <p class="price">₹1999 MRP incl. of all taxes</p>
+        </div>
+        <div class="product-card">
+          <img src="https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1716031514_1659398.jpg?format=webp&w=300&dpr=1.3" alt="Product 4">
+          <h3>Powerpuff Girls: Sugar & Spice</h3>
+          <p>Women Summer Shirts</p>
+          <p class="price">₹999 MRP incl. of all taxes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blog-section">
+    <div class="header">Fresh from the blog -></div>
+    <div class="parent-block">
+      <!-- Child Block 1 -->
+      <div class="child-block">
+        <img src="https://i.etsystatic.com/inv/73f1ea/5310016542/inv_620x495.5310016542_ukkxc6qi.jpg?version=0" alt="Cozy Throws">
+        <div class="child-content">
+          <h3>9 Comfy Throws for Cosy Autumn Vibes</h3>
+          <p>Embrace the snuggling season with stylish throws that will warm your hearts.</p>
+        </div>
+      </div>
+      <!-- Child Block 2 -->
+      <div class="child-block">
+        <img src="https://i.etsystatic.com/inv/1b86b2/5514321927/inv_425x340.5514321927_50cniifw.jpg?version=0" alt="Beautiful Bags">
+        <div class="child-content">
+          <h3>14 Beautiful Bags That Express Your Unique Style</h3>
+          <p>Amp up your fashion game with bags that perfectly match your aesthetic.</p>
+        </div>
+      </div>
+      <!-- Child Block 3 -->
+      <div class="child-block">
+        <img src="https://i.etsystatic.com/inv/0c0724/5507381345/inv_425x340.5507381345_8imomvyj.jpg?version=0" alt="Gift Ideas for Kids">
+        <div class="child-content">
+          <h3>The Best Gift Ideas for Kids of All Ages</h3>
+          <p>Shop the sweetest surprises for all little ones in your family.</p>
+        </div>
+      </div>
+       
+      </div>
+    </div>
+  </div>
+  <div class="contact-section">
+    <!-- Left Form Section -->
+    <div class="form-container">
+      <div class="form-header">CONTACT US</div>
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="telephone">Telephone</label>
+        <input type="text" id="telephone" placeholder="Enter your telephone number">
+      </div>
+      <div class="form-group">
+        <label for="comment">Comment *</label>
+        <textarea id="comment" placeholder="Enter your comment"></textarea>
+      </div>
+      <div class="required-fields">* Required Fields</div>
+      <button class="submit-btn">SUBMIT</button>
+    </div>
+
+    <!-- Right Information Section -->
+    <div class="contact-info">
+      <p>
+        We at Sunflame rejoice every opportunity which helps us to keep in touch with our customers.
+        So, you can reach us as per your convenience by phone, email or through personal visit to our office.
+      </p>
+      <p><strong>Sunflame Enterprises Private Limited</strong><br>
+        58, Sector 27C, Mathura Road, Faridabad - 121 003, Haryana, India<br>
+        +91-129-4266999<br>
+        <strong>For any sales-related enquiry please mail us on:</strong><br>
+        enquiry@sunflame.com
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <!-- Left Logo -->
+    <img src="https://www.thesouledstore.com/static/img/newlogo.8dcc6cc.png" alt="The Souled Store Logo">
+    
+    <!-- Center Copyright -->
+    <div class="copyright">&copy; The Souled Store 2024-25</div>
+    
+    <!-- Right Social Icons -->
+    <div class="social-icons">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdrdiGEfzHNzRhXJkjsRuAACQX5ZB8rOrM1Q&s" alt="Facebook">
+      <img src="data:image/jpeg;base64,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" alt="Instagram">
+      <img src="data:image/png;base64,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" alt="Twitter">
+    </div>
+  </footer>
+
+
+   
+
+
+</body>
+</html>
